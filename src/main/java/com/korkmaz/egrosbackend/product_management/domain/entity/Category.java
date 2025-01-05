@@ -20,7 +20,6 @@ public class Category {
 
     private String name;
     private String slug;
-    private String description;
     private Boolean isActive = true;
 
     @ManyToOne(fetch = FetchType.LAZY)
