@@ -5,6 +5,6 @@ import com.korkmaz.egrosbackend.product_management.presentation.dto.request.Crea
 import org.springframework.stereotype.Service;
 
 @Service
-public interface AddCategoryService {
-    CategoryDTO addCategory(CreateCategoryRequest request);
+public interface CreateCategoryService {
+    CategoryDTO createCategory(CreateCategoryRequest request);
 }

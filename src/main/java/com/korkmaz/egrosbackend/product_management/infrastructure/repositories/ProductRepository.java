@@ -1,4 +1,4 @@
-package com.korkmaz.egrosbackend.product_management.domain.repository;
+package com.korkmaz.egrosbackend.product_management.infrastructure.repositories;
 
 import com.korkmaz.egrosbackend.product_management.domain.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
