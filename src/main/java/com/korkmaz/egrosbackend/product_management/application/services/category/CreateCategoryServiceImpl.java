@@ -1,10 +1,10 @@
-package com.korkmaz.egrosbackend.product_management.application.services;
+package com.korkmaz.egrosbackend.product_management.application.services.category;
 
-import com.korkmaz.egrosbackend.product_management.application.dto.CategoryDTO;
 import com.korkmaz.egrosbackend.product_management.application.mapper.CategoryMapper;
 import com.korkmaz.egrosbackend.product_management.domain.entity.Category;
-import com.korkmaz.egrosbackend.product_management.infrastructure.repositories.CategoryRepository;
+import com.korkmaz.egrosbackend.product_management.domain.repositories.CategoryRepository;
 import com.korkmaz.egrosbackend.product_management.presentation.dto.request.CreateCategoryRequest;
+import com.korkmaz.egrosbackend.product_management.presentation.dto.response.CreateCategoryResponse;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +23,7 @@ public class CreateCategoryServiceImpl implements CreateCategoryService {
 
     @Transactional
     @Override
-    public CategoryDTO createCategory(CreateCategoryRequest request) {
+    public CreateCategoryResponse createCategory(CreateCategoryRequest request) {
 
         Category category = categoryMapper.toEntity(request);
 
@@ -37,7 +37,7 @@ public class CreateCategoryServiceImpl implements CreateCategoryService {
 
         Category savedCategory = categoryRepository.save(category);
 
-        return categoryMapper.toDto(savedCategory);
+        return categoryMapper.toResponseDto(savedCategory);
     }
 
 }

@@ -1,8 +1,8 @@
 package com.korkmaz.egrosbackend.product_management.presentation.controller;
 
-import com.korkmaz.egrosbackend.product_management.application.dto.CategoryDTO;
-import com.korkmaz.egrosbackend.product_management.application.services.CreateCategoryServiceImpl;
+import com.korkmaz.egrosbackend.product_management.application.services.category.CreateCategoryServiceImpl;
 import com.korkmaz.egrosbackend.product_management.presentation.dto.request.CreateCategoryRequest;
+import com.korkmaz.egrosbackend.product_management.presentation.dto.response.CreateCategoryResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,8 +22,8 @@ public class CategoryController {
 
 
     @PostMapping("/add")
-    public ResponseEntity<CategoryDTO> createCategory(@RequestBody CreateCategoryRequest request) {
-        CategoryDTO createdCategory = categoryService.createCategory(request);
+    public ResponseEntity<CreateCategoryResponse> createCategory(@RequestBody CreateCategoryRequest request) {
+        CreateCategoryResponse createdCategory = categoryService.createCategory(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdCategory);
     }
 }
