@@ -33,7 +33,7 @@ public class Catalog {
     
     @OneToMany(mappedBy = "catalog", cascade = CascadeType.ALL)
     private List<CatalogImage> images = new ArrayList<>();
-    
+
     @OneToMany(mappedBy = "catalog", cascade = CascadeType.ALL)
     private Set<CatalogAttribute> variantAttributes = new HashSet<>();
 }

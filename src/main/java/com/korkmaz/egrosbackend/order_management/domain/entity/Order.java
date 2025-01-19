@@ -27,7 +27,7 @@ public class Order {
     @CreationTimestamp
     private LocalDateTime orderDate;
 
-    private String status; // Gönderildi ,tamamlandı vb.
+    private String status;
     private Double totalPrice;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)

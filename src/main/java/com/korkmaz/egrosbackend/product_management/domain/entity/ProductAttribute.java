@@ -21,5 +21,5 @@ public class ProductAttribute {
     @ManyToOne(fetch = FetchType.LAZY)
     private AttributeDefinition attributeDefinition;
     
-    private String value;  // JSON olabilir
+    private String value;
 }

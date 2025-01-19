@@ -1,1 +1,0 @@
-package com.korkmaz.egrosbackend.order_management.Infrastructure.config;

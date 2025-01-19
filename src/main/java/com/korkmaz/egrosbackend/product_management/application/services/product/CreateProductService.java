@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 
 
-//TODO: ProductDTO yerine CreateProductRepsonse ile yanıt dönecek.
+//TODO: ProductDTO yerine CreateProductRepsonse ile yanıt dönecek. Proje genelinde response ve requestler biraz detaylıca olduğundan es geçildi ileride detaylıca düzelticem.
 
 @Service
 public interface CreateProductService {
