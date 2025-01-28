@@ -2,16 +2,17 @@ package com.korkmaz.egrosbackend.product_management.presentation.dto.response;
 
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 public class CreateCategoryResponse {
     private Long id;
     private String name;
     private String slug;
     private Boolean isActive;
-    private Long parentId;
 }

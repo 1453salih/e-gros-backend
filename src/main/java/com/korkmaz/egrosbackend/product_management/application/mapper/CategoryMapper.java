@@ -16,7 +16,6 @@ public interface CategoryMapper {
     @Mapping(target = "parent", ignore = true)
     Category toEntity(CreateCategoryRequest request);
 
-    @Mapping(target = "parentId", source = "parent.id")
     @Mapping(target = "subCategoryIds", expression = "java(mapSubCategoryIds(category))")
     CategoryDTO toDto(Category category);
 
@@ -30,6 +29,5 @@ public interface CategoryMapper {
                 .map(Category::getId)
                 .collect(Collectors.toList());
     }
-    @Mapping(target = "parentId", source = "parent.id")
     CreateCategoryResponse toResponseDto(Category category);
 }

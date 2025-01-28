@@ -1,7 +1,7 @@
 package com.korkmaz.egrosbackend.product_management.application.services.product;
 
-import com.korkmaz.egrosbackend.product_management.application.dto.ProductDTO;
 import com.korkmaz.egrosbackend.product_management.presentation.dto.request.CreateProductRequest;
+import com.korkmaz.egrosbackend.product_management.presentation.dto.response.CreateProductResponse;
 import org.springframework.stereotype.Service;
 
 
@@ -11,5 +11,5 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface CreateProductService {
-    ProductDTO createProduct(CreateProductRequest request);
+    CreateProductResponse createProduct(CreateProductRequest request);
 }

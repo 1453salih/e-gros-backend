@@ -1,7 +1,8 @@
 package com.korkmaz.egrosbackend.product_management.application.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
@@ -9,7 +10,8 @@ import java.util.List;
 import java.util.Set;
 
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class CatalogDTO {
@@ -19,7 +21,6 @@ public class CatalogDTO {
     private String sku;
     private BigDecimal salesPrice;
     private BigDecimal listPrice;
-    private Integer stockQuantity;
     private Boolean isActive;
     private List<CatalogImageDTO> images;
     private Set<CatalogAttributeDTO> variantAttributes;

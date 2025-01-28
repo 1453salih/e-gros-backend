@@ -1,16 +1,19 @@
 package com.korkmaz.egrosbackend.order_management.presentation.dto.request;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class CreateOrderRequest {
     private Long customerId;
     private Long shippingId;
     private Long paymentId;
     private List<OrderItemDTO> items;
 
-    @Data
+    @Getter
+@Setter
     public static class OrderItemDTO {
         private Long productId;
         private Integer quantity;

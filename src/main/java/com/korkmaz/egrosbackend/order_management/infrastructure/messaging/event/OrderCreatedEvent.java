@@ -1,11 +1,13 @@
 package com.korkmaz.egrosbackend.order_management.infrastructure.messaging.event;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class OrderCreatedEvent {

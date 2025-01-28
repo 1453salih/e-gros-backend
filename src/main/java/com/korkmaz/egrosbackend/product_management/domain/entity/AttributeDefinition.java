@@ -1,14 +1,13 @@
 package com.korkmaz.egrosbackend.product_management.domain.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,11 +18,11 @@ public class AttributeDefinition {
     private Long id;
     
     private String name;        // Renk, Beden, Malzeme, RAM, Ekran Boyutu vs.
-    private String type;        // TEXT, NUMBER, BOOLEAN vs.
+    private String type;        // TEXT, NUMBER, BOOLEAN vs. Enum olabilir.
     private Boolean isRequired;
     private Boolean isVariant;
     private Integer sortOrder;
-    
-    @ManyToMany
-    private Set<Category> categories = new HashSet<>();  // Hangi kategorilerde kullanılacağını tutar
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    private Set<Category> categories = new HashSet<>();
 }

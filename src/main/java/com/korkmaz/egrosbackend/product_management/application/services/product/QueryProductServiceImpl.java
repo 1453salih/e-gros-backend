@@ -26,7 +26,7 @@ public class QueryProductServiceImpl implements QueryProductService {
         return productRepository.findById(productId)
                 .filter(Product::getIsActive)
                 .map(product -> {
-                    // Active kataloglardan en düşük satış fiyatlı olanı al şuanlık sonra düzelticem tabi
+                    // Active kataloglardan (varyantlardan) en düşük satış fiyatlı olanı al şuanlık sonra düzelticem tabi
                     Optional<Catalog> activeCatalog = product.getCatalogs().stream()
                             .filter(Catalog::getIsActive)
                             .min(Comparator.comparing(Catalog::getSalesPrice));
@@ -48,7 +48,7 @@ public class QueryProductServiceImpl implements QueryProductService {
     @Transactional(readOnly = true)
     public ProductDTO getProductById(Long id) {
         return productRepository.findById(id)
-                .map(productMapper::toDto)
+                .map(productMapper::toNormalDto)
                 .orElseThrow(() -> new EntityNotFoundException("Product not found with id: " + id));
     }
 }

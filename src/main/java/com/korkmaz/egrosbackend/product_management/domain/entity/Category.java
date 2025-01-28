@@ -2,13 +2,17 @@ package com.korkmaz.egrosbackend.product_management.domain.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -28,4 +32,7 @@ public class Category {
 
     @OneToMany(mappedBy = "parent", cascade = CascadeType.ALL)
     private List<Category> subCategories = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "categories" )
+    private Set<AttributeDefinition> attributes = new HashSet<>();
 }

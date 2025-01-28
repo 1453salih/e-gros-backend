@@ -4,7 +4,10 @@ import com.korkmaz.egrosbackend.product_management.application.dto.ProductDTO;
 import com.korkmaz.egrosbackend.product_management.application.services.product.CreateProductService;
 import com.korkmaz.egrosbackend.product_management.application.services.product.QueryProductService;
 import com.korkmaz.egrosbackend.product_management.presentation.dto.request.CreateProductRequest;
+import com.korkmaz.egrosbackend.product_management.presentation.dto.response.CreateProductResponse;
 import com.korkmaz.egrosbackend.product_management.presentation.dto.response.ProductPriceResponse;
+import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,11 +24,6 @@ public class ProductController {
         this.queryProductService = queryProductService;
     }
 
-    @PostMapping("/add")
-    public ResponseEntity<ProductDTO> createProduct(@RequestBody CreateProductRequest request) {
-        ProductDTO createdProduct = createProductService.createProduct(request);
-        return ResponseEntity.ok(createdProduct);
-    }
     @GetMapping("/{id}/price")
     public ResponseEntity<ProductPriceResponse> getProductPrice(@PathVariable Long id) {
         return queryProductService.getProductPrice(id)
@@ -35,5 +33,11 @@ public class ProductController {
     @GetMapping("/{id}")
     public ResponseEntity<ProductDTO> getProductById(@PathVariable Long id) {
         return ResponseEntity.ok(queryProductService.getProductById(id));
+    }
+
+    @PostMapping("/add")
+    public ResponseEntity<CreateProductResponse> createProduct(@Valid @RequestBody CreateProductRequest request) {
+        CreateProductResponse response = createProductService.createProduct(request);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 }
