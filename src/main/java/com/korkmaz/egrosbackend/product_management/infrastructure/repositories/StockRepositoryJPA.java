@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.Optional;
 
-public interface StockRepositoryImpl extends JpaRepository<Stock, Long>, StockRepository {
+public interface StockRepositoryJPA extends JpaRepository<Stock, Long>, StockRepository {
     Optional<Stock> findByCatalogId(Long catalogId);
 
     @Query("SELECT s FROM Stock s WHERE s.catalog.id = :catalogId AND s.availableQuantity >= :quantity")

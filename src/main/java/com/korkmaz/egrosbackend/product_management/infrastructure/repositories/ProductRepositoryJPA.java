@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface ProductRepositoryImpl extends JpaRepository<Product, Long>, ProductRepository {
+public interface ProductRepositoryJPA extends JpaRepository<Product, Long>, ProductRepository {
 }

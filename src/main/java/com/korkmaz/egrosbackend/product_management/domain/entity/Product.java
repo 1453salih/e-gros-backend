@@ -28,7 +28,7 @@ public class Product {
     private String description;
     private String brandName;
     private String modelCode;
-    private Boolean isActive = true;
+    private boolean isActive = true;  //BAK: boolean - BOOLEAN, primitive ? nonPrimitive which one .null check
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
