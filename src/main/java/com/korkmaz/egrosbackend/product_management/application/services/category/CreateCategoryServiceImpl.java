@@ -37,7 +37,7 @@ public class CreateCategoryServiceImpl implements CreateCategoryService {
 
         Category savedCategory = categoryRepository.save(category);
 
-        return categoryMapper.toResponseDto(savedCategory);
+        return categoryMapper.toCreateResponseDto(savedCategory);
     }
 
 }
